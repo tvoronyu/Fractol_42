@@ -10,6 +10,7 @@ int		exit_x(t_struct *ptr)
 
 void	usage_help(void)
 {
+	ft_putstr("__________________________________\n\n");
 	ft_putstr("\n  usage: ./fractol fractol_name\n");
 	ft_putstr("__________________________________\n");
 	ft_putstr("  1: mandelbrot\n");
