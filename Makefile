@@ -33,6 +33,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIBFT) 
 	@$(CC) $(IN) $(OBJ) $(FLAGS) $(IN_2) $(LIBFT)  -o $(NAME)
 	@printf "\e[32m Fractol finish compile Ok!\n"
+	@./fractol
 
 $(OBJ): $(SRC)
 	@printf "\e[36m Fractol is creating\n"
