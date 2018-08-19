@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_mlx_init_2.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tvoronyu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/19 13:38:07 by tvoronyu          #+#    #+#             */
+/*   Updated: 2018/08/19 13:39:07 by tvoronyu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
-int  	ft_count_pixel(t_struct *ptr, int x, int y)
+int		ft_count_pixel(t_struct *ptr, int x, int y)
 {
 	if (y > 0)
 		return (y * ptr->size_line + x * 4);
@@ -40,15 +52,9 @@ void	ft_mlx_init(t_struct *ptr)
 	ptr->mlx_ptr = mlx_init();
 	ptr->mlx_win = mlx_new_window(ptr->mlx_ptr, W, H, "Fractol");
 	ptr->mlx_img = mlx_new_image(ptr->mlx_ptr, W, H);
-	ptr->mlx_addr = mlx_get_data_addr(ptr->mlx_img, &ptr->bits_per_pixel, &ptr->size_line, &ptr->endian);
-	
-
-
+	ptr->mlx_addr = mlx_get_data_addr(ptr->mlx_img, &ptr->bits_per_pixel,
+			&ptr->size_line, &ptr->endian);
 	ft_enter_fractol(ptr);
-	
-
-
-
 	mlx_hook(ptr->mlx_win, 17, 1L << 17, exit_x, ptr);
 	mlx_hook(ptr->mlx_win, 2, 5, deal_key, ptr);
 	mlx_hook(ptr->mlx_win, 6, 1L, deal_key_mouse_1, ptr);

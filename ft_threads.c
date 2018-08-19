@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_threads.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tvoronyu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/19 13:58:45 by tvoronyu          #+#    #+#             */
+/*   Updated: 2018/08/19 14:00:06 by tvoronyu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
-static	void	*ft_comand_threads(void *pot)
+void	*ft_comand_threads(void *pot)
 {
 	t_threads	*potok;
 	int			y;
@@ -13,11 +25,10 @@ static	void	*ft_comand_threads(void *pot)
 		ft_mandelbrot_init(potok->ptr, 0, y, y_max);
 	else if (potok->ptr->id == 1)
 		ft_julia_init(potok->ptr, 0, y, y_max);
-	
 	pthread_exit(0);
 }
 
-void			ft_threads(t_struct *ptr)
+void	ft_threads(t_struct *ptr)
 {
 	t_threads		potok[N];
 	int				i;
@@ -35,5 +46,4 @@ void			ft_threads(t_struct *ptr)
 	i = -1;
 	while (++i < N)
 		pthread_join(potok[i].threads, NULL);
-	
 }

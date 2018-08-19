@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_trik.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tvoronyu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/19 14:00:28 by tvoronyu          #+#    #+#             */
+/*   Updated: 2018/08/19 14:01:32 by tvoronyu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	ft_trik_asigned(t_struct *ptr)
@@ -11,14 +23,14 @@ void	ft_trik_asigned(t_struct *ptr)
 	ptr->trik.c_y = 1000;
 }
 
-int 	ft_perevirka_trik_plus(t_struct *ptr)
+int		ft_perevirka_trik_plus(t_struct *ptr)
 {
 	if (ptr->trik.c_x + 1000 > 10E8)
 		return (0);
 	return (1);
 }
 
-int 	ft_perevirka_trik_negative(t_struct *ptr)
+int		ft_perevirka_trik_negative(t_struct *ptr)
 {
 	if (ptr->trik.c_x - ptr->trik.a_x < 250)
 		return (0);
@@ -36,23 +48,22 @@ void	ft_trik_init(t_struct *ptr, int it, int tmp)
 		{
 			ptr->trik.x = (ptr->trik.x + ptr->trik.a_x) / 2;
 			ptr->trik.y = (ptr->trik.y + ptr->trik.a_y) / 2;
-			ft_pixel_color_fern(ptr, ptr->trik.x, ptr->trik.y, 225, 0);
+			ft_pixel_color_fern(ptr, ptr->trik.x, ptr->trik.y, 225);
 		}
 		else if (tmp > 3 && tmp < 7)
 		{
 			ptr->trik.x = (ptr->trik.x + ptr->trik.b_x) / 2;
 			ptr->trik.y = (ptr->trik.y + ptr->trik.b_y) / 2;
-			ft_pixel_color_fern(ptr, ptr->trik.x, ptr->trik.y, 225, 0);
+			ft_pixel_color_fern(ptr, ptr->trik.x, ptr->trik.y, 225);
 		}
 		else if (tmp > 6 && tmp < 10)
 		{
 			ptr->trik.x = (ptr->trik.x + ptr->trik.c_x) / 2;
 			ptr->trik.y = (ptr->trik.y + ptr->trik.c_y) / 2;
-			ft_pixel_color_fern(ptr, ptr->trik.x, ptr->trik.y, 225, 0);
+			ft_pixel_color_fern(ptr, ptr->trik.x, ptr->trik.y, 225);
 		}
 	}
 }
-
 
 void	ft_trik(t_struct *ptr)
 {

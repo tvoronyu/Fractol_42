@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_hook.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tvoronyu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/19 12:56:14 by tvoronyu          #+#    #+#             */
+/*   Updated: 2018/08/19 12:56:54 by tvoronyu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 int		deal_key(int key, t_struct *ptr)
@@ -41,26 +53,19 @@ int		deal_key_mouse_1(int x, int y, t_struct *ptr)
 	if (ptr->id == 1)
 	{
 		if (x > 0 && x < W && y > 0 && y < H && ptr->stop_julia == 1)
+		{
+			if (ptr->zoom < 5)
 			{
-				if (ptr->zoom < 5)
-				{
-					ptr->Re = -0.7469 - (double)x / 1000;
-					ptr->Im = -0.1089 - (double)y / 1000;
-				}
-				else
-				{
-					ptr->Re = -0.7469 - (double)x / 2000;
-					ptr->Im = -0.1089 - (double)y / 2000;
-				}
-				ft_julia(ptr);
+				ptr->re = -0.7469 - (double)x / 1000;
+				ptr->im = -0.1089 - (double)y / 1000;
 			}
+			else
+			{
+				ptr->re = -0.7469 - (double)x / 2000;
+				ptr->im = -0.1089 - (double)y / 2000;
+			}
+			ft_julia(ptr);
+		}
 	}
 	return (0);
 }
-
-
-
-
-
-
-

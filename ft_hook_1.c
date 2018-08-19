@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_hook_1.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tvoronyu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/19 12:57:15 by tvoronyu          #+#    #+#             */
+/*   Updated: 2018/08/19 12:59:00 by tvoronyu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	ft_key_69(t_struct *ptr)
 {
-	
-	if (ptr->id == 0) 
+	if (ptr->id == 0)
 	{
 		if (ptr->depth < 2147483647)
 			ptr->depth++;
@@ -32,7 +43,7 @@ void	ft_key_78(t_struct *ptr)
 {
 	if (ptr->id == 0)
 	{
-		if (ptr->depth -10 > 0)
+		if (ptr->depth - 10 > 0)
 			ptr->depth--;
 		ft_mandelbrot(ptr);
 	}
@@ -58,7 +69,7 @@ void	ft_key_78(t_struct *ptr)
 void	ft_stop_julia(t_struct *ptr)
 {
 	if (ptr->stop_julia == 1)
-		ptr->stop_julia	= 0;
+		ptr->stop_julia = 0;
 	else
 		ptr->stop_julia = 1;
 	ft_julia(ptr);
