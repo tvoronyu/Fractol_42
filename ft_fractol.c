@@ -50,6 +50,7 @@ void		ft_fractol(char *name)
 {
 	t_struct ptr[1];
 
+	ft_usage();
 	ptr->id = ft_name_check(name);
 	ft_mlx_init(ptr);
 }

@@ -6,11 +6,22 @@
 /*   By: tvoronyu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/19 13:56:44 by tvoronyu          #+#    #+#             */
-/*   Updated: 2018/08/19 13:58:29 by tvoronyu         ###   ########.fr       */
+/*   Updated: 2018/08/19 14:44:28 by tvoronyu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+void	ft_usage(void)
+{
+	ft_putendl("ZOOM   			scroll mouse");
+	ft_putendl("Iterations  		'+' and '-' of NumPud");
+	ft_putendl("Chanche colors  	'8' of NumPud");
+	ft_putendl("Move  			'up' 'down' 'right' 'left'");
+	ft_putendl("Reset fractol  		'space'");
+	ft_putendl("Stop mooving julia  	'S'");
+	ft_putendl("Exit   			'Esc'");
+}
 
 int		ft_bgzm(int size)
 {

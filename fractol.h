@@ -108,6 +108,7 @@ void			usage_help(void);
 void			ft_enter_fractol(t_struct *ptr);
 int				ft_count_pixel(t_struct *ptr, int x, int y);
 char			*ft_text(double value, int size);
+void			ft_usage();
 
 int				exit_x(t_struct *ptr);
 int				deal_key(int key, t_struct *ptr);
